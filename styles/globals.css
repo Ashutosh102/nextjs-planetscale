@@ -1,0 +1,181 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --white: #fff;
+  --black: #000;
+
+  --gray-050: #fafbfc;
+  --gray-100: #ebeef2;
+  --gray-200: #d0d3d7;
+  --gray-300: #b2b5b9;
+  --gray-400: #9a9ea4;
+  --gray-500: #7b7f87;
+  --gray-600: #5a5f68;
+  --gray-700: #444854;
+  --gray-800: #30313a;
+  --gray-900: #1a1b21;
+
+  --red-050: #fffafa;
+  --red-100: #ffe5e9;
+  --red-200: #fbbfc7;
+  --red-300: #ff909f;
+  --red-400: #ff7082;
+  --red-500: #ff455d;
+  --red-600: #dd243c;
+  --red-700: #c11027;
+  --red-800: #8f0718;
+  --red-900: #51050e;
+
+  --blue-050: #f3fbff;
+  --blue-100: #ddf2ff;
+  --blue-200: #a9dffe;
+  --blue-300: #73c7f9;
+  --blue-400: #47b7f8;
+  --blue-500: #1e9de7;
+  --blue-600: #0e73cc;
+  --blue-700: #144eb6;
+  --blue-800: #0e3682;
+  --blue-900: #071f4d;
+
+  --bg-primary: var(--white);
+  --bg-secondary: var(--gray-050);
+  --border-primary: var(--gray-100);
+  --border-secondary: var(--gray-200);
+  --text-primary: var(--gray-900);
+  --text-secondary: var(--gray-600);
+  --text-blue: var(--blue-600);
+  --text-red: var(--red-600);
+  --text-red-disabled: var(--red-300);
+}
+
+html {
+  @apply h-full;
+}
+
+body {
+  @apply h-full;
+  @apply text-base;
+  @apply text-primary;
+  @apply bg-primary;
+  @apply antialiased;
+}
+
+#__next {
+  @apply h-full;
+}
+
+b,
+strong {
+  @apply font-semibold;
+}
+
+label {
+  @apply inline-block;
+  @apply mb-1.5;
+  @apply leading-none;
+  @apply text-primary;
+  @apply font-semibold;
+}
+
+@layer utilities {
+  .focus-ring {
+    @apply focus:ring-2;
+    @apply focus:outline-none;
+    @apply focus:ring-offset-0;
+    @apply focus:ring-blue-200;
+    @apply focus:border-blue-500;
+    @apply focus:shadow-none;
+  }
+}
+
+table {
+  @apply min-w-full;
+  @apply border-separate !important;
+  border-spacing: 0;
+}
+
+thead {
+  @apply rounded;
+  @apply border;
+  @apply bg-secondary;
+}
+
+th {
+  @apply font-medium;
+  @apply text-secondary;
+  @apply text-left;
+  @apply text-sm;
+  @apply px-2;
+  @apply py-1;
+  @apply border-t;
+  @apply border-b;
+}
+
+th:first-child {
+  @apply border-l;
+  @apply rounded-l;
+}
+
+th:last-child {
+  @apply border-r;
+  @apply rounded-r;
+}
+
+td {
+  @apply text-left;
+  @apply px-2;
+  @apply py-2;
+  @apply border-b;
+}
+
+dl {
+  @apply grid;
+  @apply grid-cols-3;
+}
+
+dt {
+  @apply py-1.5;
+  @apply font-medium;
+  @apply border-b;
+  @apply text-secondary;
+  @apply col-span-1;
+}
+
+dd {
+  @apply py-1.5;
+  @apply border-b;
+  @apply col-span-2;
+}
+
+.spinner-ring {
+  @apply absolute;
+  @apply h-3;
+  @apply w-3;
+  @apply border-t;
+  @apply border-gray-500;
+  @apply rounded-full;
+  animation: spinner 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+}
+
+.spinner-ring:nth-child(1) {
+  animation-delay: -0.45s;
+}
+
+.spinner-ring:nth-child(2) {
+  animation-delay: -0.3s;
+}
+
+.spinner-ring:nth-child(3) {
+  animation-delay: -0.15s;
+}
+
+@keyframes spinner {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
